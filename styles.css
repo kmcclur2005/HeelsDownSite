@@ -3,39 +3,38 @@
    ========================================================================== */
 
 :root {
-  /* Huemint Palette Tokens (#fefffb, #57354b, #e46032, #006093) */
-  --bg-primary: #fefffb;
+  /* Color Palette */
+  --bg-primary: #fbf9f4;
   --bg-surface: #ffffff;
-  --bg-surface-elevated: #f4f3ec;
-  --bg-dark: #57354b;
-  --bg-dark-surface: #422638;
+  --bg-surface-elevated: #f4efe6;
+  --bg-dark: #091a13;
+  --bg-dark-surface: #10291e;
   
-  --text-main: #241721;
-  --text-muted: #5e4f5a;
-  --text-light: #fbfbfa;
-  --text-gold: #e46032;
+  --text-main: #1c2420;
+  --text-muted: #57655d;
+  --text-light: #e2e8e4;
+  --text-gold: #c6a355;
 
-  --accent-gold: #e46032;
-  --accent-gold-hover: #ca4d21;
-  --accent-gold-light: #fdf0eb;
-  --accent-green: #57354b;
-  --accent-green-light: #f2ebf0;
-  --accent-blue: #006093;
+  --accent-gold: #c6a355;
+  --accent-gold-hover: #b08d41;
+  --accent-gold-light: #f7eedb;
+  --accent-green: #123627;
+  --accent-green-light: #e5ece8;
 
-  --badge-available-bg: #e5f2f9;
-  --badge-available-text: #006093;
-  --badge-leased-bg: #f2ebf0;
-  --badge-leased-text: #5e4f5a;
+  --badge-available-bg: #e6f4ea;
+  --badge-available-text: #0d652d;
+  --badge-leased-bg: #e8eaed;
+  --badge-leased-text: #5f6368;
 
-  --border-light: rgba(228, 96, 50, 0.25);
-  --border-subtle: #e5e3d9;
+  --border-light: rgba(198, 163, 85, 0.2);
+  --border-subtle: #e2ded5;
 
   --font-heading: 'Cinzel', Georgia, serif;
   --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --shadow-sm: 0 4px 12px rgba(87, 53, 75, 0.06);
-  --shadow-md: 0 10px 30px rgba(87, 53, 75, 0.12);
-  --shadow-lg: 0 20px 40px rgba(87, 53, 75, 0.20);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(11, 34, 25, 0.08);
+  --shadow-lg: 0 20px 40px rgba(11, 34, 25, 0.15);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -168,7 +167,25 @@ button {
 
 .brand {
   display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-text {
+  display: flex;
   flex-direction: column;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--accent-green);
+}
+
+.footer-brand .brand-mark {
+  color: var(--accent-gold);
+  margin-bottom: 0.6rem;
 }
 
 .brand-title {
@@ -325,7 +342,7 @@ button {
 /* Hero Section */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, rgba(87, 53, 75, 0.95), rgba(0, 96, 147, 0.88)), url('DSC_3238-2.jpg') center top / cover no-repeat;
+  background: linear-gradient(135deg, rgba(9, 26, 19, 0.92), rgba(16, 41, 30, 0.88)), url('hero-face.jpg') right center / auto 100% no-repeat, #000;
   color: #ffffff;
   padding: 8rem 0 6rem;
   overflow: hidden;
@@ -339,9 +356,9 @@ button {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(228, 96, 50, 0.25);
+  background: rgba(198, 163, 85, 0.2);
   border: 1px solid var(--accent-gold);
-  color: #ffffff;
+  color: var(--accent-gold);
   padding: 0.4rem 1.2rem;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -458,7 +475,8 @@ button {
 
 .ponies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 580px));
+  justify-content: center;
   gap: 2.5rem;
   margin-top: 3rem;
 }
@@ -520,21 +538,17 @@ button {
   text-transform: uppercase;
 }
 
-.badge-available {
-  background-color: var(--badge-available-bg);
-  color: var(--badge-available-text);
-  border: 1px solid rgba(13, 101, 45, 0.2);
+.badge-available,
+.badge-leased {
+  background-color: var(--accent-green);
+  color: #ffffff;
+  border: 1px solid var(--accent-green);
 }
 
 .badge-soon {
-  background-color: #fdf0eb;
-  color: #e46032;
-  border: 1px solid rgba(228, 96, 50, 0.4);
-}
-
-.badge-leased {
-  background-color: var(--badge-leased-bg);
-  color: var(--badge-leased-text);
+  background-color: #fff8e6;
+  color: #b37b00;
+  border: 1px solid rgba(198, 163, 85, 0.4);
 }
 
 .image-zoom-hint {
@@ -709,8 +723,8 @@ button {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: rgba(87, 53, 75, 0.90);
-  color: #ffffff;
+  background: rgba(9, 26, 19, 0.85);
+  color: var(--accent-gold);
   padding: 0.4rem 1rem;
   border-radius: var(--radius-sm);
   font-family: var(--font-heading);
@@ -859,12 +873,6 @@ button {
   color: var(--badge-available-text);
 }
 
-.form-status.error {
-  display: block;
-  background-color: #fce8e6;
-  color: #c5221f;
-}
-
 /* Footer */
 .footer {
   background-color: var(--bg-dark);
@@ -917,7 +925,7 @@ button {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(87, 53, 75, 0.94);
+  background: rgba(9, 26, 19, 0.92);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
